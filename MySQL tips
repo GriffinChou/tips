@@ -1,0 +1,27 @@
+1.启动 MySQL
+# net start mysql
+
+2.登陆
+mysql -u root -p
+
+3.授权数据库
+grant all privileges on *.* to root@localhost identified by 'sjyroot' with grant option;
+
+
+4.数据库导出（cmd管理员环境下）
+mysqldump -h ip -u root -p 要导出的数据库名 > E:\导出.sql
+例：
+mysqldump -h 192.168.2.64 -u root -p sjy_web > E:\sjy_web.sql
+
+5.数据库导入
+mysql -u 用户名 -p
+use 数据库名
+source sql文件名
+
+6.给数据库的所有表加锁
+lock tables;
+解锁
+unlock tables
+
+7.链接远程数据库
+mysql -h ipaddress -P port -u root -p;
